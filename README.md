@@ -1,4 +1,5 @@
 # DebugUtils
+Library for arduino like boards.  
 Simple debuging utilities for arduino like boards.
 
 Based on:
