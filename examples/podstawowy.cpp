@@ -1,55 +1,53 @@
 /*
 Funkcja DEBUG_PRINT daje na porcie szerogowym zdefiniowanym jako Serial np.
-Serial.begin(9600);
+Serial.begin(115200);
 na wyjściu dane (po kolei):
-millis:
-funkcja_w_której_ją_przywołano
-nazwa_pliku_z_programem:
-linia_w_pliku
-podana zmienna w funkcji
+millis: funkcja_w_której_ją_przywołano nazwa_pliku_z_programem: linia_w_pliku podana_zmienna_w_funkcji
 */
 
 #include <Arduino.h>
 
-//Aby debug działał, należy odkomentowac linie #define DEBUG
+// Aby DebugUtils.h działał, należy odkomentowac linie #define DEBUG_UTILS i/lub DEBUG_UTILS1
 #define DEBUG_UTILS
 #define DEBUG_UTILS1
 #include <DebugUtils.h>
 
 int zmienna = 0;
 
-//zapowiedz funkcji
+// zapowiedz funkcji
 void test();
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
-
+  Serial.println("\n\nESP8266_TEST_Biblioteka - START");
   // SP i SL są skrótami Serial.print i Serial.println (z lenistwa).
   // są dostępne zawsze w tej bibliotece:
-  SL("DebugTest"); //odpowiednik Serial.println("Start DebugTest");
-  SP("Start"); //odpowiednik Serial.print("Start DebugTest");
-  SL(); //odpowiednik Serial.println();
+  SP("SP - Odpowiednik Serial.print() Zawsze dostępny w tej bibliotece");
+  SL();
+  SL("SL - Odpowiednik Serial.println() Zawsze dostępny w tej bibliotece");
 
+  DS("DS - Odpowiednik Serial.print() Wymaga #define DEBUG_UTILS");
+  DL();
+  DL("DL - Odpowiednik Serial.println() Wymaga #define DEBUG_UTILS");
+
+  DS1("DS1 - Odpowiednik Serial.print() Wymaga #define DEBUG_UTILS1. Kolejny poziom debugowania.");
+  DL1();
+  DL1("DL1 - Odpowiednik Serial.println() Wymaga #define DEBUG_UTILS1. Kolejny poziom debugowania.");
 }
 
-void loop() {
+void loop()
+{
   test();
   zmienna++;
-  delay(3000);
 
-  DS("Odpowiednik Serial.print() Wymaga #define DEBUG");
-  DL();
-  DL("Odpowiednik Serial.println() Wymaga #define DEBUG");
-
-  DS1("Odpowiednik Serial.print() Wymaga #define DEBUG1");
-  DL1();
-  DL1("Odpowiednik Serial.println() Wymaga #define DEBUG1");
-
+  delay(30000);
 }
 
-void test() {
-  DEBUG_UTILS_PRINT("raport");
-  DEBUG_UTILS_PRINT(zmienna);
-  DEBUG_UTILS_PRINT1("raport1");
-  DEBUG_UTILS_PRINT1(zmienna);
+void test()
+{
+  DF("raport");
+  DF(zmienna);
+  DF1("raport1");
+  DF1(zmienna);
 }

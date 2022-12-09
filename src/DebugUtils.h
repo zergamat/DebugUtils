@@ -20,24 +20,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #ifndef DEBUGUTILS_H
-  #define DEBUGUTILS_H
+#define DEBUGUTILS_H
 
-  #include <Arduino.h>
+#include <Arduino.h>
 
-  #ifdef DEBUG_UTILS
-    #define DEBUG_UTILS_PRINT(str)    \
-       Serial.print(millis());     \
-       Serial.print(": ");    \
-       Serial.print(__PRETTY_FUNCTION__); \
-       Serial.print(' ');      \
-       Serial.print(__FILE__);     \
-       Serial.print(':');      \
-       Serial.print(__LINE__);     \
-       Serial.print(' ');      \
-       Serial.println(str);
-  #else
-    #define DEBUG_UTILS_PRINT(str)
-  #endif
+#ifdef DEBUG_UTILS
+#define DF(str)                      \
+  Serial.print(millis());            \
+  Serial.print(": ");                \
+  Serial.print(__PRETTY_FUNCTION__); \
+  Serial.print(' ');                 \
+  Serial.print(__FILE__);            \
+  Serial.print(':');                 \
+  Serial.print(__LINE__);            \
+  Serial.print(' ');                 \
+  Serial.println(str);
+#else
+#define DF(str)
+#endif
 
 #ifdef DEBUG_UTILS
 #define DS(info) \
@@ -50,7 +50,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #ifdef DEBUG_UTILS1
-#define DEBUG_UTILS_PRINT1(str)            \
+#define DF1(str)                     \
   Serial.print(millis());            \
   Serial.print(": ");                \
   Serial.print(__PRETTY_FUNCTION__); \
@@ -61,7 +61,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   Serial.print(' ');                 \
   Serial.println(str);
 #else
-#define DEBUG_UTILS_PRINT1(str)
+#define DF1(str)
 #endif
 
 #ifdef DEBUG_UTILS1
@@ -76,7 +76,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define SP(info) \
   Serial.print(info);
-#define SL(info)        \
+#define SL(info) \
   Serial.println(info);
 
 #endif
