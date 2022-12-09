@@ -1,22 +1,22 @@
 {
   "name": "DebugUtils",
-  "version": "0.9",
-  "description": "Simple debuging utilities for arduino like boards",
+  "version": "0.9.0",
+  "description": "Simple debug utils",
   "keywords": "debuging",
-  "repository": {
+  "repository":
+  {
     "type": "git",
     "url": "https://github.com/zergamat/DebugUtils.git"
   },
-  "authors": [
+  "authors":
+  [
     {
       "name": "zergamat",
-      "email": "",
-      "url": ""
+      "email": " ",
+      "url": " "
     }
   ],
-  "license": "GNU General Public License v3",
-  "homepage": "",
-  "dependencies": "",
+  "license": "GNUv3",
   "frameworks": "*",
   "platforms": "*"
 }
