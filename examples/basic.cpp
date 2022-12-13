@@ -12,11 +12,6 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println("\n\nbasic.cpp - START");
-  // SP() works as Serial.print() - always available
-  // SL() works an Serial.println() - always available
-  SP("SP - substitute of Serial.print() - allways available");
-  SL();
-  SL("SL - substitute of Serial.println() - allways available");
 
   DS("DS - substitute of Serial.print() - requires #define DEBUG_UTILS");
   DL();

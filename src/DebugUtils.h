@@ -65,9 +65,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DL1(x)
 #endif
 
-#define SP(info) \
-  Serial.print(info);
-#define SL(info) \
-  Serial.println(info);
-
 #endif
