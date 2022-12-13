@@ -7,4 +7,4 @@ Based on:
 DebugUtils.h - Simple debugging utilities by
 Copyright (C) 2011 Fabio Varesano <fabio at varesano dot net>
 
-Realised under GPLv3 License.
+Released under GPLv3 License.
