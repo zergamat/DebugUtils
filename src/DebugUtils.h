@@ -1,14 +1,3 @@
-/*
-DebugUtils.h - Simple debugging utilities.
-Based on DebugUtils.h from (C) 2011 Fabio Varesano <fabio at varesano dot net>
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the version 3 GNU General Public License as
-published by the Free Software Foundation.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 
 #ifndef DEBUGUTILS_H
 #define DEBUGUTILS_H
